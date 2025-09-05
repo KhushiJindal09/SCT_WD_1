@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowCraft - Beauty Innovation and Makeup Mastery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for interactive nav */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            z-index: 50;
+            padding: 1rem;
+        }
+        nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+            color: #ffffff;
+        }
+        nav.scrolled .nav-link {
+            color: #000000;
+        }
+        .nav-link:hover {
+            color: #ec4899; /* Pink for makeup theme */
+            font-weight: bold;
+            transform: scale(1.05);
+        }
+        /* Animated hero background */
+        .hero-bg {
+            background-size: cover;
+            animation: makeupShift 12s ease-in-out infinite;
+        }
+        @keyframes makeupShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        /* Interactive product cards */
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            filter: brightness(1.1);
+        }
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .hero-h1 {
+                font-size: 3rem;
+            }
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Tutorial carousel */
+        .tutorial-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+        }
+        .tutorial-card {
+            min-width: 300px;
+            scroll-snap-align: start;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-gradient-to-br from-pink-100 to-purple-100">
+    <!-- Fixed Interactive Navigation -->
+    <nav id="navbar">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-white font-bold text-2xl">
+                <a href="#home" class="nav-link">GlowCraft</a>
+            </div>
+            <ul class="flex space-x-6 nav-menu">
+                <li><a href="#home" class="nav-link px-3 py-2 block">Home</a></li>
+                <li><a href="#products" class="nav-link px-3 py-2 block">Products</a></li>
+                <li><a href="#tutorials" class="nav-link px-3 py-2 block">Tutorials</a></li>
+                <li><a href="#community" class="nav-link px-3 py-2 block">Community</a></li>
+                <li><a href="#blog" class="nav-link px-3 py-2 block">Blog</a></li>
+                <li><a href="#contact" class="nav-link px-3 py-2 block">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 hero-bg" style="background-image: linear-gradient(135deg, #ec4899 0%, #f97316 50%, #9333ea 100%);">
+        <div class="text-center text-white z-10 px-4">
+            <h1 class="hero-h1 text-6xl md:text-8xl font-bold mb-6 drop-shadow-lg">Glow Like Never Before</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-md">Explore beauty innovation, creative makeup art, and self-expression. From bold shades to timeless elegance, discover the world of makeup mastery with GlowCraft.</p>
+            <a href="#products" class="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-white px-10 py-4 rounded-full text-lg font-semibold hover:from-pink-600 hover:to-purple-600 transition duration-300 shadow-xl">Shop Now</a>
+        </div>
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/46d69ef9-9e05-4b37-a95f-c8cc1a97d660.png" alt="Stylish diverse models showcasing bold makeup transformations including metallic eyeshadows, contoured cheeks, and glossy lips under studio lighting with scattered makeup products" class="absolute inset-0 w-full h-full object-cover opacity-30" />
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Featured Makeup Products</h2>
+            <div class="grid md:grid-cols-3 gap-8 product-grid">
+                <div class="product-card bg-gradient-to-br from-pink-100 to-rose-100 p-6 rounded-xl text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4941fd8d-1469-406c-a4e7-5f6b12a8a3d7.png" alt="Velvety matte lipstick in a rich crimson shade displayed on a marble surface with gold accents and soft shadows" class="w-full h-64 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-semibold mb-4">Velvet Matte Lipstick</h3>
+                    <p>$24.99 | Long-lasting, creamy formula for bold statements.</p>
+                    <button class="mt-4 bg-pink-500 text-white px-6 py-2 rounded-full hover:bg-pink-600 transition transform hover:scale-105" data-product="Velvet Matte Lipstick">Add to Cart</button>
+                </div>
+                <div class="product-card bg-gradient-to-br from-purple-100 to-indigo-100 p-6 rounded-xl text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0e24c537-bd07-446d-8fe5-1b49244b8d76.png" alt="Eyeshadow palette with 12 vibrant shades from shimmer to matte textures open to reveal luxurious powdered pigments" class="w-full h-64 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-semibold mb-4">Illuminating Eyeshadow Palette</h3>
+                    <p>$49.99 | Shimmer and matte blends for endless eye looks.</p>
+                    <button class="mt-4 bg-pink-500 text-white px-6 py-2 rounded-full hover:bg-pink-600 transition transform hover:scale-105" data-product="Illuminating Eyeshadow Palette">Add to Cart</button>
+                </div>
+                <div class="product-card bg-gradient-to-br from-yellow-100 to-orange-100 p-6 rounded-xl text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d0a080ed-b030-4be7-83ad-fac0c263f8b6.png" alt="Golden highlighter compact with pearlescent powder and application brush revealed in an elegant, minimally lit display" class="w-full h-64 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-semibold mb-4">Glowing Highlighter</h3>
+                    <p>$29.99 | Radiant powders for that camera-ready glow.</p>
+                    <button class="mt-4 bg-pink-500 text-white px-6 py-2 rounded-full hover:bg-pink-600 transition transform hover:scale-105" data-product="Glowing Highlighter">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorials Section (Cloned from Recipes) -->
+    <section id="tutorials" class="py-20 bg-gradient-to-r from-purple-100 to-pink-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8">Interactive Tutorial Carousel</h2>
+            <p class="text-lg max-w-3xl mx-auto mb-12">Swipe through stunning makeup tutorials. Click to explore steps and tips!</p>
+            <div class="tutorial-carousel pb-4">
+                <div class="tutorial-card bg-white p-6 rounded-xl">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7f3c040d-da1e-47fb-9f7d-a2d709e978ab.png" alt="Step-by-step smoky eye tutorial with blending brushes, dark shadows, and winged liner on a flawless base" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-semibold mb-4">Smoky Eye Mastery</h3>
+                    <p>Bold and sultry eyes for night vibes.</p>
+                    <a href="#" class="text-pink-500 hover:text-pink-700">Watch Tutorial</a>
+                </div>
+                <div class="tutorial-card bg-white p-6 rounded-xl">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9f87cf69-3829-4373-9221-e29a758c11cc.png" alt="Nude makeup look with natural foundations, soft blushes, and clear gloss lips in a daytime setting" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-semibold mb-4">Flawless Nude Glow</h3>
+                    <p>Effortless everyday elegance.</p>
+                    <a href="#" class="text-pink-500 hover:text-pink-700">Watch Tutorial</a>
+                </div>
+                <div class="tutorial-card bg-white p-6 rounded-xl">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9dbbdc3a-1b9c-44b6-9f65-54fd1e64d4e7.png" alt="Vibrant contouring technique with bronzers, highlighters, and blending sponges for sculpted cheeks" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-semibold mb-4">Contour to Perfection</h3>
+                    <p>Define and glow with expert tips.</p>
+                    <a href="#" class="text-pink-500 hover:text-pink-700">Watch Tutorial</a>
+                </div>
+                <div class="tutorial-card bg-white p-6 rounded-xl">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7e0f912d-dbda-4781-ac1d-ec070f5bf4c8.png" alt="Creative lipstick blending from red to nude tones with applicators and blotting techniques" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-semibold mb-4">Lip Art Adventures</h3>
+                    <p>Bold shades that pop on skin.</p>
+                    <a href="#" class="text-pink-500 hover:text-pink-700">Watch Tutorial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-12">Join the GlowCraft Community</h2>
+            <p class="text-lg mb-8">Share your makeup creations and inspirations. Tag us in your looks with #GlowCraft for a chance to be featured!</p>
+            <div class="grid md:grid-cols-4 gap-4">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d9ae0a28-eac2-4ca8-8997-61f901f2b5ec.png" alt="User's Instagram selfie with dramatic eyeliner, feathered brows, and sheer lip tint in a mirror reflection" class="w-full h-full object-cover rounded-lg hover:brightness-110 transition" />
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b843f77e-3cbc-4a93-9110-e87c32c962cd.png" alt="Flatlay of makeup brushes, palettes, and highlighters arranged artistically on a pastel pink surface" class="w-full h-full object-cover rounded-lg hover:brightness-110 transition" />
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6f7bfbfc-dbe3-4aec-956c-7659689ca320.png" alt="Group of friends in makeup tutorials, laughing with applicators and colors spread out in a cozy room" class="w-full h-full object-cover rounded-lg hover:brightness-110 transition" />
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8f513974-0686-41da-9336-6d2013601f13.png" alt="Before-and-after makeup transformation from natural to glamorous with rhinestones and bold contours" class="w-full h-full object-cover rounded-lg hover:brightness-110 transition" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-gradient-to-r from-pink-100 to-purple-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Beauty Insights Blog</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <article class="bg-white p-6 rounded-xl hover:shadow-lg transition">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d7678d3b-5dec-4515-be7b-d982c41c3620.png" alt="Infographic of skincare routines with moisturizing steps under foundation for flawless makeup application" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-semibold mb-4">Skincare-First Makeup</h3>
+                    <p>Glow naturally with these prep tips...</p>
+                    <a href="#" class="text-pink-500 mt-4 inline-block hover:text-pink-700">Read More</a>
+                </article>
+                <article class="bg-white p-6 rounded-xl hover:shadow-lg transition">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/29b088f3-0028-4ee7-bb1a-8910da9f5967.png" alt="Color wheel diagram showing complementary makeup shades for eye-lip coordination and trendy palettes" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-2xl font-semibold mb-4">Color Coordination Hacks</h3>
+                    <p>Master makeup harmony effortlessly...</p>
+                    <a href="#" class="text-pink-500 mt-4 inline-block hover:text-pink-700">Read More</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8">Get in Touch</h2>
+            <p class="text-lg mb-8">Have beauty questions or collaboration ideas? Let's chat about makeup magic.</p>
+            <form class="max-w-lg mx-auto">
+                <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" required>
+                <input type="email" placeholder="Your Email" class="w-full p-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" required>
+                <textarea placeholder="Your Message" class="w-full p-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" required></textarea>
+                <button type="submit" class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-3 rounded-full font-semibold hover:from-pink-600 hover:to-purple-600 transition duration-300">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 GlowCraft. Empowering beauty through creativity and innovation. Follow us @glowcraftbeauty</p>
+        </div>
+    </footer>
+
+    <script>
+        // Nav scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Interactive cart mockup
+        let cart = [];
+        document.querySelectorAll('button[data-product]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const product = btn.getAttribute('data-product');
+                cart.push(product);
+                alert(`Added ${product} to cart! Total items: ${cart.length}`);
+            });
+        });
+
+        // Tutorial carousel auto-scroll for extra interactivity
+        setInterval(() => {
+            const carousel = document.querySelector('.tutorial-carousel');
+            if (carousel) {
+                carousel.scrollLeft += 300;
+                if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
+                    carousel.scrollLeft = 0;
+                }
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
