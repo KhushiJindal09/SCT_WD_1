@@ -6,7 +6,6 @@
     <title>GlowCraft - Beauty Innovation and Makeup Mastery</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom styles for interactive nav */
         nav {
             position: fixed;
             width: 100%;
@@ -28,11 +27,10 @@
             color: #000000;
         }
         .nav-link:hover {
-            color: #ec4899; /* Pink for makeup theme */
+            color: #ec4899; 
             font-weight: bold;
             transform: scale(1.05);
         }
-        /* Animated hero background */
         .hero-bg {
             background-size: cover;
             animation: makeupShift 12s ease-in-out infinite;
@@ -45,7 +43,6 @@
                 background-position: 100% 50%;
             }
         }
-        /* Interactive product cards */
         .product-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
         }
@@ -67,7 +64,6 @@
                 grid-template-columns: 1fr;
             }
         }
-        /* Tutorial carousel */
         .tutorial-carousel {
             display: flex;
             overflow-x: auto;
@@ -81,7 +77,6 @@
     </style>
 </head>
 <body class="font-sans text-gray-900 bg-gradient-to-br from-pink-100 to-purple-100">
-    <!-- Fixed Interactive Navigation -->
     <nav id="navbar">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-white font-bold text-2xl">
@@ -98,7 +93,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 hero-bg" style="background-image: linear-gradient(135deg, #ec4899 0%, #f97316 50%, #9333ea 100%);">
         <div class="text-center text-white z-10 px-4">
             <h1 class="hero-h1 text-6xl md:text-8xl font-bold mb-6 drop-shadow-lg">Glow Like Never Before</h1>
@@ -108,7 +102,6 @@
         <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/46d69ef9-9e05-4b37-a95f-c8cc1a97d660.png" alt="Stylish diverse models showcasing bold makeup transformations including metallic eyeshadows, contoured cheeks, and glossy lips under studio lighting with scattered makeup products" class="absolute inset-0 w-full h-full object-cover opacity-30" />
     </section>
 
-    <!-- Products Section -->
     <section id="products" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12">Featured Makeup Products</h2>
@@ -135,7 +128,6 @@
         </div>
     </section>
 
-    <!-- Tutorials Section (Cloned from Recipes) -->
     <section id="tutorials" class="py-20 bg-gradient-to-r from-purple-100 to-pink-100">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold mb-8">Interactive Tutorial Carousel</h2>
@@ -169,7 +161,6 @@
         </div>
     </section>
 
-    <!-- Community Section -->
     <section id="community" class="py-20 bg-white">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold mb-12">Join the GlowCraft Community</h2>
@@ -183,7 +174,6 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
     <section id="blog" class="py-20 bg-gradient-to-r from-pink-100 to-purple-100">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12">Beauty Insights Blog</h2>
@@ -203,8 +193,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-100">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold mb-8">Get in Touch</h2>
@@ -218,7 +206,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-10">
         <div class="container mx-auto px-4 text-center">
             <p>© 2024 GlowCraft. Empowering beauty through creativity and innovation. Follow us @glowcraftbeauty</p>
@@ -226,7 +213,6 @@
     </footer>
 
     <script>
-        // Nav scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -236,7 +222,6 @@
             }
         });
 
-        // Smooth scroll for nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -246,7 +231,6 @@
             });
         });
 
-        // Interactive cart mockup
         let cart = [];
         document.querySelectorAll('button[data-product]').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -255,8 +239,6 @@
                 alert(`Added ${product} to cart! Total items: ${cart.length}`);
             });
         });
-
-        // Tutorial carousel auto-scroll for extra interactivity
         setInterval(() => {
             const carousel = document.querySelector('.tutorial-carousel');
             if (carousel) {
@@ -270,3 +252,4 @@
 </body>
 
 </html>
+
